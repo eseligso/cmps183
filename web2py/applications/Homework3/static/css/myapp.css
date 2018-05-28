@@ -1,0 +1,22 @@
+div.checklists {
+	margin: 5px;
+	border: 2px solid gray;
+	margin-right: 25px;
+}
+
+div.checklist_title {
+	font-weight: bold;
+	font-size: 150%;
+}
+
+div.right_btn {
+	text-align: right;
+	margin-bottom: 5px;
+}
+
+.unclickable {
+	padding: 0.15em 0.6em 0.15em .9em;
+	margin: 0 0.5em 0.5em 0;
+	background-color: #808080;
+	color: white;
+}

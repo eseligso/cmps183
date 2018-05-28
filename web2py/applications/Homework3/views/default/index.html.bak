@@ -1,0 +1,165 @@
+{{extend 'layout.html'}}
+
+{{block head}}
+{{end}}
+
+<div class="main_content">
+  
+    {{if auth.user is not None:}}
+
+        <p><a class="btn normal" href="{{=URL('default', 'add')}}"><i class="fa fa-plus"></i>  Add</a></p>
+
+        <h2>Private Checklists</h2>
+
+        {{if not checklists:}}
+            <p>You don't have any checklists. Click Add to create one.</p>
+
+        {{else:}} 
+
+            {{for cl in checklists:}}
+                    
+                {{if cl.is_public == False and cl.user_email == auth.user.email:}}
+                    <div class="checklists">    
+                        <div class="checklist_title">{{=cl.title}}</div>
+                        <div class="checklist_description">{{=cl.description}}</div>
+                        <div class="buttons">
+                            <div class="right_btn">
+                                <a class="btn" href="{{=URL('default', 'edit', args=[cl.id])}}">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                
+                                <a class="btn" href="{{=URL('default', 'delete', args=[cl.id], user_signature=True)}}">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+
+                                <a class="btn" href="{{=URL('default', 'toggle_private', args=[cl.id])}}">
+                                    {{if cl.is_public == False:}}
+                                        <i class="fa fa-user"></i>
+                                    {{else:}}
+                                        <i class="fa fa-users"></i>
+                                    {{pass}}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {{pass}}
+                
+                {{pass}}
+
+            {{pass}}
+
+        <h2>Public Checklists</h2>
+
+        {{if checklists is not None:}}
+
+            {{c = 0}}
+
+            {{for cl in checklists:}}
+
+                {{if cl.is_public == True:}}
+                    
+                    {{c = 1}}
+
+                    {{if cl.user_email == auth.user.email:}}
+                        
+                        <div class="checklists">
+                            <div class="checklist_title">{{=cl.title}}</div>
+                            <div class="checklist_description">{{=cl.description}}</div>
+                            <div class="buttons">
+                                <div class="right_btn">
+                                    <a class="btn" href="{{=URL('default', 'edit', args=[cl.id])}}">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                    
+                                    <a class="btn" href="{{=URL('default', 'delete', args=[cl.id], user_signature=True)}}">
+                                        <i class="fa fa-trash"></i>
+                                    </a>
+
+                                    <a class="btn" href="{{=URL('default', 'toggle_private', args=[cl.id])}}">
+                                        {{if cl.is_public == False:}}
+                                            <i class="fa fa-user"></i>
+                                        {{else:}}
+                                            <i class="fa fa-users"></i>
+                                        {{pass}}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    {{else:}}
+
+                        <div class="checklists">
+                                <div class="checklist_title">{{=cl.title}}</div>
+                                <div class="checklist_description">{{=cl.description}}</div>
+                                <div class="buttons">
+                                    <div class="right_btn">
+                                        <a class="unclickable">
+                                            <i class="fa fa-users"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                        </div>
+
+                        {{pass}}
+
+                    {{pass}}
+
+                {{pass}}
+
+            {{if c == 0:}}
+
+                <p>There are no public checklists at the moment.</p>
+                {{pass}}
+
+        {{else:}}
+
+            <p>There are no public checklists at the moment.</p>
+
+            {{pass}}
+    
+    {{else:}}
+        <h1 class="main_title"> Welcome! </h1>
+
+        <p>This site stores checklists. Log in to start making your own.
+
+        <div class="login_button">
+            <a href="{{=URL('default', 'user')}}" class="btn">Login</a>
+        </div>
+
+        <h2>Public Checklists</h2>
+
+        {{if checklists is not None:}}
+
+            {{c = 0}}
+
+            {{for cl in checklists:}}
+
+                {{if cl.is_public == True:}}
+
+                    {{c = 1}}
+
+                    <div class="checklists">    
+                        <div class="checklist_title">{{=cl.title}}</div>
+                        <div class="checklist_description">{{=cl.description}}</div>
+                        <div class="buttons">
+                            <div class="right_btn">
+                                <a class="unclickable">
+                                    <i class="fa fa-users"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {{pass}}
+                {{pass}}
+
+            {{if c == 0:}}
+                <p>There are no public checklists at the moment.</p>
+                {{pass}}
+
+        {{else:}}
+
+            <p>There are no public checklists at the moment.</p>
+
+            {{pass}}
+        {{pass}}
+</div>

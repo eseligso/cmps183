@@ -1,0 +1,23 @@
+[2018-05-13 19:00:56] START
+[2018-05-13 19:01:31] CREATE db_schema.py: 0
+[2018-05-13 19:03:03] CREATE db_whoosh.py: 0
+[2018-05-13 19:03:12] CREATE populate.py: 0
+[2018-05-13 19:03:24] EDIT scaffold/models/populate.py: 6
+[2018-05-13 19:03:42] EDIT scaffold/models/db_schema.py: 4
+[2018-05-13 19:03:59] EDIT scaffold/models/db_whoosh.py: 25
+[2018-05-13 19:04:35] EDIT scaffold/models/menu.py: -83
+[2018-05-13 19:14:32] CREATE css/custom.css: 0
+[2018-05-13 19:14:49] EDIT scaffold/static/css/custom.css: 8
+[2018-05-13 19:15:01] CREATE css/stupid.css: 0
+[2018-05-13 19:15:39] EDIT scaffold/static/css/web2py.css: -94
+[2018-05-13 19:15:54] EDIT scaffold/static/css/stupid.css: 354
+[2018-05-13 19:17:49] CREATE default/main.html: 0
+[2018-05-13 19:18:03] EDIT scaffold/views/default/main.html: 19
+[2018-05-13 19:18:32] EDIT scaffold/views/default/user.html: 0
+[2018-05-13 19:44:12] DELETE scaffold/models/db_whoosh.py: -25
+[2018-05-13 19:45:22] EDIT scaffold/models/menu.py: 0
+[2018-05-13 19:49:11] DELETE scaffold/models/menu.py: -14
+[2018-05-13 19:56:51] EDIT scaffold/views/default/index.html: -27
+[2018-05-13 19:57:46] EDIT scaffold/views/default/main.html: 0
+[2018-05-13 19:58:13] EDIT scaffold/views/default/user.html: 0
+[2018-05-13 19:59:26] EDIT scaffold/controllers/default.py: 6

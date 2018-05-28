@@ -1,0 +1,13 @@
+[2016-09-22 10:34:46] START
+[2018-05-13 20:25:52] EDIT Homework3/models/db.py: -9
+[2018-05-13 20:26:38] CREATE db_schema.py: 0
+[2018-05-13 20:26:41] EDIT Homework3/models/db_schema.py: 4
+[2018-05-13 20:26:59] CREATE db_whoosh.py: 0
+[2018-05-13 20:27:02] EDIT Homework3/models/db_whoosh.py: 25
+[2018-05-13 20:27:22] CREATE populate.py: 0
+[2018-05-13 20:27:25] EDIT Homework3/models/populate.py: 6
+[2018-05-13 20:28:38] EDIT Homework3/static/css/custom.css: 0
+[2018-05-13 20:29:39] CREATE default/main.html: 0
+[2018-05-13 20:29:45] EDIT Homework3/views/default/main.html: 19
+[2018-05-13 20:30:20] EDIT Homework3/views/default/index.html: -107
+[2018-05-13 20:30:50] DELETE Homework3/models/menu.py: -35
